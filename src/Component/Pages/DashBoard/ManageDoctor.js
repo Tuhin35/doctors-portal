@@ -16,7 +16,7 @@ const closeModal=()=>{
     queryKey: ['doctors'],
     queryFn: async () => {
       try {
-        const res = await fetch('https://doctors-portal-server-beta-orpin.vercel.app/doctors', {
+        const res = await fetch('https://doctors-portal-server-vl6z.vercel.app/doctors', {
           headers: {
             authorization: `bearer ${localStorage.getItem('accessToken')}`
 
@@ -32,7 +32,7 @@ const closeModal=()=>{
   })
 
   const successDelete =(doctor)=>{
-    fetch(`https://doctors-portal-server-beta-orpin.vercel.app/doctors/${doctor._id}`,{
+    fetch(`https://doctors-portal-server-vl6z.vercel.app/doctors/${doctor._id}`,{
      method:'DELETE',
      headers:{
        authorization:`bearer ${localStorage.getItem('accessToken')}`

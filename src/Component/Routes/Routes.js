@@ -50,12 +50,12 @@ const router = createBrowserRouter([
                 element: <SignUp></SignUp>
 
             }
-        ],
+        ]
 
     },
     {
         path: "/dashboard",
-        element: <DashBoardLayOut></DashBoardLayOut>,
+        element: <PrivateRoutes><DashBoardLayOut></DashBoardLayOut></PrivateRoutes>,
         errorElement: <ErrorPage></ErrorPage>,
         children:
             [
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
                 {
                     path: "/dashboard/payment/:id",
                     element: <PrivateRoutes><Payment></Payment></PrivateRoutes>,
-                    loader:({params}) => fetch(`https://doctors-portal-server-beta-orpin.vercel.app/bookings/${params.id}`)
+                    loader:({params}) => fetch(`https://doctors-portal-server-vl6z.vercel.app/bookings/${params.id}`)
                 }
             ]
     }

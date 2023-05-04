@@ -68,7 +68,7 @@ const SignUp = () => {
   const saveUser = (name , email,form) => {
 
     const user = { name, email };
-    fetch('https://doctors-portal-server-beta-orpin.vercel.app/users', {
+    fetch('https://doctors-portal-server-vl6z.vercel.app/users', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

@@ -12,7 +12,7 @@ const MyAppointment = () => {
     const { data: bookings, refetch, isLoading} = useQuery({
         queryKey:['bookings',user?.email],
         queryFn: async()=>{
-            const res = await fetch(`https://doctors-portal-server-beta-orpin.vercel.app/bookings?email=${user.email}`,{
+            const res = await fetch(`https://doctors-portal-server-vl6z.vercel.app/bookings?email=${user.email}`,{
               headers:{
                 authorization:`bearer ${localStorage.getItem('accessToken')}`
               }

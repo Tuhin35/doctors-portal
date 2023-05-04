@@ -12,14 +12,14 @@ const AvailableAppointment = ({ selectedDate}) => {
     // useQuery function use 
     // const {data:appointmentOptions = []} = useQuery({
     //     queryKey:['appointmentOptions'],
-    //     queryFn:()=>   fetch('https://doctors-portal-server-beta-orpin.vercel.app/appointmentOptions')
+    //     queryFn:()=>   fetch('https://doctors-portal-server-vl6z.vercel.app/appointmentOptions')
     //     .then(res=> res.json())
     // })
 
     const { data: appointmentOptions= [], refetch, isLoading} = useQuery({
         queryKey:['appointmentOptions',date],
         queryFn: async()=>{
-            const res = await fetch(`https://doctors-portal-server-beta-orpin.vercel.app/appointmentOptions?date=${date}`)
+            const res = await fetch(`https://doctors-portal-server-vl6z.vercel.app/appointmentOptions?date=${date}`)
             const data = await res.json();
             return data;
         }
@@ -31,7 +31,7 @@ const AvailableAppointment = ({ selectedDate}) => {
     }
 
     // useEffect(()=>{
-    //     fetch('https://doctors-portal-server-beta-orpin.vercel.app/appointmentOptions')
+    //     fetch('https://doctors-portal-server-vl6z.vercel.app/appointmentOptions')
     //     .then(res=> res.json())
     //     .then(data =>setAppointmentOptions(data))
         

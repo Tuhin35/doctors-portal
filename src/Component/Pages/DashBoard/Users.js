@@ -7,13 +7,13 @@ const Users = () => {
     const {data: users = [], isLoading, refetch } = useQuery({
         queryKey:['users'],
         queryFn: async()=>{
-            const res = await fetch('https://doctors-portal-server-beta-orpin.vercel.app/users');
+            const res = await fetch('https://doctors-portal-server-vl6z.vercel.app/users');
             const data = await res.json();
             return data;
         }
     })
     const handleMakeAdmin= id =>{
-           fetch(`https://doctors-portal-server-beta-orpin.vercel.app/users/admin/${id}`,{
+           fetch(`https://doctors-portal-server-vl6z.vercel.app/users/admin/${id}`,{
             method:'PUT',
             headers:
             {

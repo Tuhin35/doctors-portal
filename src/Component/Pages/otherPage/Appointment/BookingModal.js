@@ -28,7 +28,7 @@ const BookingModal = ({ treatment,setTreatment, selectedDate, refetch  }) => {
             Price
         }
 
-        fetch('https://doctors-portal-server-beta-orpin.vercel.app/bookings',{
+        fetch('https://doctors-portal-server-vl6z.vercel.app/bookings',{
             method:'POST',
             headers:{
                 'content-type' : 'application/json'
@@ -41,7 +41,7 @@ const BookingModal = ({ treatment,setTreatment, selectedDate, refetch  }) => {
            if(data.acknowledged){
             setTreatment(null)
             toast.success('Booking confirmed');
-            navigate('/dashboard/dashboard')
+            navigate('/dashboard')
             refetch();
            }
            else{
