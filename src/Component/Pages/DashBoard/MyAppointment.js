@@ -9,7 +9,7 @@ const MyAppointment = () => {
  
   
   const {user} = useContext(AuthContext);
-    const { data: bookings, refetch, isLoading} = useQuery({
+    const { data: bookings =[], refetch, isLoading} = useQuery({
         queryKey:['bookings',user?.email],
         queryFn: async()=>{
             const res = await fetch(`https://doctors-portal-server-vl6z.vercel.app/bookings?email=${user.email}`,{
@@ -28,7 +28,7 @@ const MyAppointment = () => {
 
     refetch();
     if(isLoading){
-      return <Loading></Loading>
+      return <Loading></Loading> 
   }
 
     return (

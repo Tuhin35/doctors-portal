@@ -23,7 +23,8 @@ const closeModal=()=>{
           }
         });
         const data = await res.json();
-        return data
+        console.log(data)
+        return data 
       }
       catch (error) {
 
@@ -69,8 +70,8 @@ const closeModal=()=>{
           </thead>
           <tbody>
             {/* row 1 */}
-            {
-              doctors.map((doctor, i) => <tr key={doctor._id}>
+            { doctors &&
+              doctors?.map((doctor, i) => <tr key={doctor._id}>
                 <th>{++i}</th>
                 <td><img className='mask mask-squircle w-12 h-12' src={doctor.image} alt="" /></td>
                 <td>{doctor.name}</td>
